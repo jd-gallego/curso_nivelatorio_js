@@ -152,7 +152,7 @@ function arreglar(arr){
 }
 numbers = arreglar(numbers);
 console.log(numbers);
-*/
+
 
 
 const person = [
@@ -203,5 +203,84 @@ const personas = [
 const persona = personas.find(persona => persona.edad > 50);
 console.log(persona);
 
+let num1 = 2;
+let num2 = 3;
 
-//
+function add(num1, num2){
+    return num1 + num2;
+}
+
+const sub = (num1, num2) => num1 + num2;
+
+add();
+sub();
+
+
+
+const person = {
+    firstname : "juli",
+    lastnames : "gallego",
+    age : 19,
+};
+
+const director = {
+    ...person,
+    isActive : true,
+};
+
+console.log(director);
+
+const { age, ...others} = director;
+console.log(age);
+console.log(others);
+*/
+
+
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog("Rex");
+dog.speak();
+
+
+
+class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`hello, my name is ${this.name} and I am ${this.age} years old`);
+    }
+}
+
+class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age);
+        this.grade = grade;
+    }
+
+    study(){
+        console.log(`${this.name} is studying`)
+    }
+}
+
+const student = new Student('Juli', 19, 'A');
+student.greet();
+student.study();
+student.name;
+student.age;
